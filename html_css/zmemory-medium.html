@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PEXESO</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="wrapper-game">
+        <ul class="cards-medium" id="cards-show">
+          <li class="card card-easy">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-1.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card card-easy">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-2.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card card-easy">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-3.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card card-easy">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-4.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-5.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-6.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card card-easy">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-1.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card card-easy">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-2.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card card-easy">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-3.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card card-easy">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-4.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-5.png" alt="card-img" />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <img src="../images/cover.png" alt="Image description" />
+            </div>
+            <div class="view back-view">
+              <img src="images/img-6.png" alt="card-img" />
+            </div>
+          </li>
+          <div id="win-screen">
+            <div id="win-text">
+              <div id="typedtext"></div>
+              <p id="score">your score is:</p>
+              <p
+                id="back-to-menu-id-win"
+                onclick="returnToMenu(); resetCounter()"
+              >
+                Back to menu
+              </p>
+            </div>
+            <img src="../images/winning-scr.png" />
+          </div>
+        </ul>
+        <div id="back-to-menu">
+          <p
+            id="back-to-menu-id"
+            onclick="returnToMenu(); shuffleCard(); resetCounter()"
+          >
+            Back to menu
+          </p>
+          <p id="counter">Turns:</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../script/script-medium.js"></script>
+  <script src="../script/game.js"></script>
+</html>
