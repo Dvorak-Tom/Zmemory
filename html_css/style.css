@@ -263,8 +263,8 @@ h3 {
 @media screen and (max-width: 700px) {
   .main-menu {
     text-align: center;
-    max-height: 450px;
-    max-width: 450px;
+    max-height: 600px;
+    max-width: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
