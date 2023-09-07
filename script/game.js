@@ -1,3 +1,91 @@
+const gameConfig = {
+  hardcore: {
+    matchCount: 10,
+    cardArray: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  },
+  medium: {
+    matchCount: 6,
+    cardArray: [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6],
+  },
+  easy: {
+    matchCount: 4,
+    cardArray: [1, 2, 3, 4, 1, 2, 3, 4],
+  },
+  hard: {
+    matchCount: 8,
+    cardArray: [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8],
+  },
+};
+
+const cards = document.querySelectorAll(".card");
+let matched = 0;
+let cardOne, cardTwo;
+let disableDeck = false;
+
+function flipCard({ target: clickedCard }) {
+  if (cardOne !== clickedCard && !disableDeck) {
+    clickedCard.classList.add("flip");
+    if (!cardOne) {
+      return (cardOne = clickedCard);
+    }
+    cardTwo = clickedCard;
+    disableDeck = true;
+    let cardOneImg = cardOne.querySelector(".back-view img").src,
+      cardTwoImg = cardTwo.querySelector(".back-view img").src;
+    matchCards(cardOneImg, cardTwoImg, currentDifficulty);
+    incrementCount();
+  }
+}
+
+function matchCards(img1, img2, difficulty) {
+  if (img1 === img2) {
+    matched++;
+    if (matched === gameConfig[difficulty].matchCount) {
+      let myElement = document.getElementById("win-screen");
+      myElement.style.display = "flex";
+      startTypewriter();
+      setTimeout(() => {
+        return shuffleCard(difficulty);
+      }, 1000);
+    }
+    cardOne.removeEventListener("click", flipCard);
+    cardTwo.removeEventListener("click", flipCard);
+    cardOne = cardTwo = "";
+    return (disableDeck = false);
+  }
+
+  setTimeout(() => {
+    cardOne.classList.add("shake");
+    cardTwo.classList.add("shake");
+  }, 400);
+  setTimeout(() => {
+    cardOne.classList.remove("shake", "flip");
+    cardTwo.classList.remove("shake", "flip");
+    cardOne = cardTwo = "";
+    disableDeck = false;
+  }, 1200);
+}
+
+shuffleCard();
+
+function shuffleCard(difficulty) {
+  matched = 0;
+  disableDeck = false;
+  cardOne = cardTwo = "";
+  const arr = [...gameConfig[currentDifficulty].cardArray]; // using spread to clone
+  arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
+  cards.forEach((card, i) => {
+    card.classList.remove("flip");
+    let imgTag = card.querySelector(".back-view img");
+    imgTag.src = `../images/img-${arr[i]}.png`;
+    card.addEventListener("click", flipCard);
+  });
+}
+
+cards.forEach((card) => {
+  card.addEventListener("click", flipCard);
+});
+
 let aText = new Array(
   "Congratulations on defeating the zombie army!",
   "Your bravery and quick thinking have",
@@ -71,3 +159,14 @@ function resetCounter() {
 function returnToMenu() {
   window.location.href = "../index.html";
 }
+
+// display the cards on page load
+window.onload = function () {
+  shuffleCard(currentDifficulty); // shuffle cards or any other initial setup you want
+
+  // Now make cards visible and change their opacity to 1
+  document.querySelectorAll(".card").forEach((card) => {
+    card.style.visibility = "visible";
+    card.style.opacity = "1";
+  });
+};

@@ -94,6 +94,12 @@ h3 {
   overflow: hidden;
 }
 
+.card {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease-in-out;
+}
+
 .cards-easy,
 .cards-medium,
 .cards-hard,
@@ -286,6 +292,11 @@ h3 {
   .card .view {
     border-radius: 5px;
   }
+}
+
+#typedtext {
+  position: flex;
+  font-size: 1.4rem;
 }
 
 @media screen and (max-width: 530px) {
