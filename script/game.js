@@ -1,19 +1,20 @@
 const gameConfig = {
-  hardcore: {
-    matchCount: 10,
-    cardArray: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  easy: {
+    matchCount: 4,
+    cardArray: [1, 2, 3, 4, 1, 2, 3, 4],
   },
   medium: {
     matchCount: 6,
     cardArray: [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6],
   },
-  easy: {
-    matchCount: 4,
-    cardArray: [1, 2, 3, 4, 1, 2, 3, 4],
-  },
+
   hard: {
     matchCount: 8,
     cardArray: [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8],
+  },
+  hardcore: {
+    matchCount: 10,
+    cardArray: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   },
 };
 
