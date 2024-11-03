@@ -21,7 +21,7 @@ A fun and challenging memory game created using HTML, CSS, and JavaScript. Train
 - If the cards don't match, they will shake and turn back over.
 
 
-Play the game 👉 **[HERE](https://main--rococo-cupcake-b3eada.netlify.app/)** 👈
+Play the game 👉 **[HERE](https://iridescent-queijadas-c52e09.netlify.app/)** 👈
 
 
 # Dependencies
